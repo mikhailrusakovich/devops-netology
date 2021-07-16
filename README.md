@@ -36,3 +36,4 @@ override.tf.json
 #проигнорировать файл .terraformrc и файл terraform.tcMy Ignore CLI configuration files
 .terraformrc
 terraform.rcMy
+new line
