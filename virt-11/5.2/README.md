@@ -56,5 +56,7 @@ Ansible
 
 Создать виртуальную машину.
 Зайти внутрь ВМ, убедиться, что Docker установлен с помощью команды
-docker ps
+`docker ps`
+<img width="855" alt="Screen Shot 2021-11-09 at 1 12 58 PM" src="https://user-images.githubusercontent.com/87324543/140981329-e861b9e5-0f20-4f71-ad82-9bc6318b5d29.png">
+
 
