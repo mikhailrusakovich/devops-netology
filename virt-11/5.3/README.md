@@ -73,12 +73,37 @@ logstash и kibana можно развернуть либо на виртуал�
 - Добавьте еще один файл в папку ```/data``` на хостовой машине;
 - Подключитесь во второй контейнер и отобразите листинг и содержание файлов в ```/data``` контейнера.
 
+```mikhailrusakovich@Mikhails-MBP data % docker run -it -v $(pwd):/data --name centos -d centos```                                 
+```fee47491bd7376543b6b606cac378aa26015383ae01093a651453d12c540d018```
+```mikhailrusakovich@Mikhails-MBP data % docker exec -it fee47491bd7376543b6b606cac378aa26015383ae01093a651453d12c540d018 /bin/bash```
+```[root@fee47491bd73 /]# cd /data/```
+```[root@fee47491bd73 data]# ls```
+```myfile.txt```
+```mikhailrusakovich@Mikhails-MBP data % docker run -it -v $(pwd):/data --name debian -d debian```                              
+```074ba40a7532490468964f0e6eace12f22020d42270490cbd83ea9556a1c482b```
+```mikhailrusakovich@Mikhails-MBP data % docker exec -it 074ba40a7532490468964f0e6eace12f22020d42270490cbd83ea9556a1c482b /bin/bash```
+```root@074ba40a7532:/# cd /data/```
+```root@074ba40a7532:/data# ls```
+```myfile.txt```
+```root@074ba40a7532:/data# touch newfileindebiancontainer.txt```
+```root@074ba40a7532:/data# ls -al```
+```total 8```
+```drwxr-xr-x 4 root root  128 Nov 11 23:32 .```
+```drwxr-xr-x 1 root root 4096 Nov 11 23:30 ..```
+```-rw-r--r-- 1 root root   14 Nov 11 23:16 myfile.txt```
+```-rw-r--r-- 1 root root    0 Nov 11 23:32 newfileindebiancontainer.txt```
+```root@074ba40a7532:/data# exit```
+```exit```
+```mikhailrusakovich@Mikhails-MBP data % ls```
+```myfile.txt			newfileindebiancontainer.txt```
+
 ## Задача 4 (*)
 
 Воспроизвести практическую часть лекции самостоятельно.
 
 Соберите Docker образ с Ansible, загрузите на Docker Hub и пришлите ссылку вместе с остальными ответами к задачам.
 
+https://hub.docker.com/repository/docker/mikhailrusakovich/ansible
 
 ---
 
