@@ -73,7 +73,8 @@ logstash и kibana можно развернуть либо на виртуал�
 - Добавьте еще один файл в папку ```/data``` на хостовой машине;
 - Подключитесь во второй контейнер и отобразите листинг и содержание файлов в ```/data``` контейнера.
 
-```mikhailrusakovich@Mikhails-MBP data % docker run -it -v $(pwd):/data --name centos -d centos                                 
+```
+mikhailrusakovich@Mikhails-MBP data % docker run -it -v $(pwd):/data --name centos -d centos                                 
 fee47491bd7376543b6b606cac378aa26015383ae01093a651453d12c540d018
 mikhailrusakovich@Mikhails-MBP data % docker exec -it fee47491bd7376543b6b606cac378aa26015383ae01093a651453d12c540d018 /bin/bash
 root@fee47491bd73 /]# cd /data/
@@ -95,7 +96,8 @@ rw-r--r-- 1 root root    0 Nov 11 23:32 newfileindebiancontainer.txt
 root@074ba40a7532:/data# exit
 exit
 mikhailrusakovich@Mikhails-MBP data % ls
-myfile.txt			newfileindebiancontainer.txt```
+myfile.txt			newfileindebiancontainer.txt
+```
 
 ## Задача 4 (*)
 
