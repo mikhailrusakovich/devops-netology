@@ -27,9 +27,8 @@
 
 Для получения зачета, вам необходимо предоставить:
 - Скриншот работающего веб-интерфейса Grafana с текущими метриками, как на примере ниже
-<p align="center">
-  <img width="1200" height="600" src="./assets/yc_02.png">
-</p>
+
+<img width="1440" alt="Screen Shot 2021-11-14 at 11 41 08 AM" src="https://user-images.githubusercontent.com/87324543/141690028-3a61f692-b74c-44c4-b489-427ee1f408aa.png">
 
 ## Задача 4 (*)
 
