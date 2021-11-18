@@ -36,6 +36,9 @@ Overlay Network - это компьютерная сеть, которая на�
 docker node ls
 ```
 
+<img width="1440" alt="Screen Shot 2021-11-17 at 8 24 05 PM" src="https://user-images.githubusercontent.com/87324543/142334530-08dd4792-dbd1-4a9f-bcfb-7e55f2eec68b.png">
+
+
 ## Задача 3
 
 Создать ваш первый, готовый к боевой эксплуатации кластер мониторинга, состоящий из стека микросервисов.
@@ -45,6 +48,9 @@ docker node ls
 docker service ls
 ```
 
+<img width="1440" alt="Screen Shot 2021-11-17 at 8 25 13 PM" src="https://user-images.githubusercontent.com/87324543/142334545-cdc690f1-3870-4fae-9f37-070516ed69ec.png">
+
+
 ## Задача 4 (*)
 
 Выполнить на лидере Docker Swarm кластера команду (указанную ниже) и дать письменное описание её функционала, что она делает и зачем она нужна:
@@ -52,4 +58,17 @@ docker service ls
 # см.документацию: https://docs.docker.com/engine/swarm/swarm_manager_locking/
 docker swarm update --autolock=true
 ```
+```
+[root@node01 ~]# docker swarm update --autolock=true
+Swarm updated.
+To unlock a swarm manager after it restarts, run the `docker swarm unlock`
+command and provide the following key:
+
+    SWMKEY-1-rwnf9LJ.........dOE2lVRor43IXLOv5w
+
+Please remember to store this key in a password manager, since without it you
+will not be able to restart the manager.
+```
+Это настройка, которая включиет обязательный ввод ключа, при последующем перезапуске docker swarm.
+Когда Docker перезапускается, вы должны сначала разблокировать docker swarm, используя ключ шифрования, сгенерированный Docker, когда swarm был заблокирован.
 
