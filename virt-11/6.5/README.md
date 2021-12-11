@@ -20,8 +20,64 @@
 
 В ответе приведите:
 - текст Dockerfile манифеста
+
+```
+#6.5. Elasticsearch
+FROM centos:7
+LABEL ElasticSearch 6.5
+ENV PATH=/usr/lib:/usr/lib/jvm/jre-11/bin:$PATH
+
+RUN yum install java-11-openjdk -y \
+    && yum install wget -y 
+
+RUN wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.11.1-linux-x86_64.tar.gz \
+    && wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.11.1-linux-x86_64.tar.gz.sha512 
+RUN yum install perl-Digest-SHA -y 
+RUN shasum -a 512 -c elasticsearch-7.11.1-linux-x86_64.tar.gz.sha512 \ 
+    && tar -xzf elasticsearch-7.11.1-linux-x86_64.tar.gz \
+    && yum upgrade -y
+    
+ADD elasticsearch.yml /elasticsearch-7.11.1/config/
+ENV JAVA_HOME=/elasticsearch-7.11.1/jdk/
+ENV ES_HOME=/elasticsearch-7.11.1
+RUN groupadd elasticsearch \
+    && useradd -g elasticsearch elasticsearch
+    
+RUN mkdir /var/lib/logs \
+    && chown elasticsearch:elasticsearch /var/lib/logs \
+    && mkdir /var/lib/data \
+    && chown elasticsearch:elasticsearch /var/lib/data \
+    && chown -R elasticsearch:elasticsearch /elasticsearch-7.11.1/
+RUN mkdir /elasticsearch-7.11.1/snapshots &&\
+    chown elasticsearch:elasticsearch /elasticsearch-7.11.1/snapshots
+    
+USER elasticsearch
+CMD ["/elasticsearch-7.11.1/bin/elasticsearch"]
+```
+
 - ссылку на образ в репозитории dockerhub
 - ответ `elasticsearch` на запрос пути `/` в json виде
+
+```
+mikhailrusakovich@Mikhails-MacBook-Pro 6.5 % curl -GET http://localhost:9200                                           
+{
+  "name" : "netology_test_node-1",
+  "cluster_name" : "netology_test",
+  "cluster_uuid" : "sFRhR6SERX6-_WpvLmA44Q",
+  "version" : {
+    "number" : "7.11.1",
+    "build_flavor" : "default",
+    "build_type" : "tar",
+    "build_hash" : "ff17057114c2199c9c1bbecc727003a907c0db7a",
+    "build_date" : "2021-02-15T13:44:09.394032Z",
+    "build_snapshot" : false,
+    "lucene_version" : "8.7.0",
+    "minimum_wire_compatibility_version" : "6.8.0",
+    "minimum_index_compatibility_version" : "6.0.0-beta1"
+  },
+  "tagline" : "You Know, for Search"
+}
+```
 
 Подсказки:
 - возможно вам понадобится установка пакета perl-Digest-SHA для корректной работы пакета shasum
