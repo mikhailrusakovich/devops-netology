@@ -13,7 +13,7 @@ RUN shasum -a 512 -c elasticsearch-7.11.1-linux-x86_64.tar.gz.sha512 \
     && tar -xzf elasticsearch-7.11.1-linux-x86_64.tar.gz \
     && yum upgrade -y
     
-# ADD elasticsearch.yml /elasticsearch-7.11.1/config/
+ADD elasticsearch.yml /elasticsearch-7.11.1/config/
 ENV JAVA_HOME=/elasticsearch-7.11.1/jdk/
 ENV ES_HOME=/elasticsearch-7.11.1
 RUN groupadd elasticsearch \
@@ -28,5 +28,4 @@ RUN mkdir /elasticsearch-7.11.1/snapshots &&\
     chown elasticsearch:elasticsearch /elasticsearch-7.11.1/snapshots
     
 USER elasticsearch
-CMD ["/usr/sbin/init"]
 CMD ["/elasticsearch-7.11.1/bin/elasticsearch"]
