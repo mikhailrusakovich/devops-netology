@@ -11,7 +11,6 @@
 # https://www.elastic.co/guide/en/elasticsearch/reference/index.html
 #
 # ---------------------------------- Cluster -----------------------------------
-#
 # Use a descriptive name for your cluster:
 #
 cluster.name: netology_test
@@ -37,9 +36,8 @@ path.data: /var/lib/data
 #
 path.logs: /var/lib/logs
 
-#Settings REPOSITORY PATH 
+#Settings REPOSITORY PATH
 #for Image from YUM (esp)
-#path.repo: /usr/share/elasticsearch/snapshots
 #for Image from TAR (est)
 path.repo: /elasticsearch-7.11.1/snapshots
 #
@@ -93,3 +91,4 @@ discovery.seed_hosts: ["127.0.0.1", "[::1]"]
 # Require explicit names when deleting indices:
 #
 #action.destructive_requires_name: true
+
