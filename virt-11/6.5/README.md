@@ -56,6 +56,9 @@ CMD ["/elasticsearch-7.11.1/bin/elasticsearch"]
 ```
 
 - ссылку на образ в репозитории dockerhub
+```
+https://hub.docker.com/repository/docker/mikhailrusakovich/elasticsearch
+```
 - ответ `elasticsearch` на запрос пути `/` в json виде
 
 ```

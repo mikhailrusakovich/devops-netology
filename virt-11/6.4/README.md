@@ -138,5 +138,11 @@ root@28c7e9d20d8a:/var/lib/postgresql# pg_dump -h localhost -U postgres test_dat
 
 Например, создать индекс.
 ```
-CREATE UNIQUE INDEX ON orders ((lower(title)));
+ALTER TABLE ONLY orders ADD UNIQUE (title);
+ALTER TABLE order_price_0_499 ADD UNIQUE (title);
+ALTER TABLE order_price_499_more ADD UNIQUE (title);
+ALTER INDEX orders_title_key
+    ATTACH PARTITION order_price_0_499_title_key;
+ALTER INDEX orders_title_key
+    ATTACH PARTITION order_price_499_more_title_key;
 ```
