@@ -1,6 +1,7 @@
 ---
 layout: "docs"
 page_title: "Moving Resources - Terraform CLI"
+description: "Commands that allow you to manage the way that resources are tracked in state. They are helpful when you move or change resources."
 ---
 
 # Moving Resources
@@ -23,6 +24,8 @@ resource.
   which resource address in your configuration is associated with a particular
   real-world object. Use this to preserve an object when renaming a resource, or
   when moving a resource into or out of a child module.
+
+    > **Hands On:** Try the [Use Configuration to Move Resources](https://learn.hashicorp.com/tutorials/terraform/move-config) on HashiCorp Learn.
 
 - [The `terraform state rm` command](/docs/cli/commands/state/rm.html) tells
   Terraform to stop managing a resource as part of the current working directory

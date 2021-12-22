@@ -46,8 +46,7 @@ organizations that use Terraform.
 different from but related to the Terraform Cloud
 [workspace](/docs/cloud/workspaces/index.html) concept.
 If you use multiple Terraform CLI workspaces in a single Terraform configuration
-and are migrating that configuration to Terraform Cloud, see this [migration
-document](/docs/cloud/migrate/workspaces.html).
+and are migrating that configuration to Terraform Cloud, refer to [Initializing and Migrating](/docs/cli/cloud/migrating.html).
 
 ## Using Workspaces
 
@@ -80,10 +79,7 @@ Terraform workspace.
 
 Within your Terraform configuration, you may include the name of the current
 workspace using the `${terraform.workspace}` interpolation sequence. This can
-be used anywhere interpolations are allowed. However, it should **not** be
-used in remote operations against Terraform Cloud workspaces. For an
-explanation, see the [remote backend](/docs/language/settings/backends/remote.html#workspaces)
-document.
+be used anywhere interpolations are allowed.
 
 Referencing the current workspace is useful for changing behavior based
 on the workspace. For example, for non-default workspaces, it may be useful
