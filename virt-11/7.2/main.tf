@@ -36,15 +36,6 @@ resource "aws_subnet" "my_subnet" {
   }
 }
 
-resource "aws_network_interface" "foo" {
-  subnet_id   = aws_subnet.my_subnet.id
-  private_ips = ["172.16.10.100"]
-
-  tags = {
-    Name = "primary_network_interface"
-  }
-}
-
 resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
