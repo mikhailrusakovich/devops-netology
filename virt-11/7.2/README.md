@@ -87,4 +87,4 @@ Packer - инструмент, с помощью которого можно с�
 
 Ссылку на репозиторий с исходной конфигурацией терраформа.
 
-[](https://github.com/mikhailrusakovich/devops-netology/tree/main/virt-11/7.2)
+[Ссылка на репозиторий](https://github.com/mikhailrusakovich/devops-netology/tree/main/virt-11/7.2)
