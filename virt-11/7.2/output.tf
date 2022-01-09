@@ -11,7 +11,7 @@ output "aws_region" {
 }
 
 output "private_IP_ec2" {
-  value = aws_instance.foo.private_ip
+  value = aws_instance.web.private_ip
 }
 
 output "subnet_ID" {
