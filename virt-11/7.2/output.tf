@@ -1,9 +1,9 @@
 output "aws_account_ID" {
-  value = "AKIARUHNNKQQLNB2B4EN"
+  value = ""
 }
 
 output "aws_user_ID" {
-  value = "xpUFMXuUNew+VL9pLI5ygE769G7r+KpD9PZvT9ld"
+  value = ""
 }
 
 output "aws_region" {
